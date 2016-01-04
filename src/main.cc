@@ -134,7 +134,7 @@ ApplicationMode ParseOptions (int argc, char ** argv) {
   }
 
   // The default
-  return TRANSFORM;
+  return ROTATE;
 }
 
 int main(int argc, char ** argv) {

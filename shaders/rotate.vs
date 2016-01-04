@@ -29,9 +29,19 @@ mat4 rotate_x(float theta)
     );
 }
 
+mat4 translate(float x, float y, float z) {
+    return mat4(
+             vec4(1.0, 0.0, 0.0, 0.0),
+             vec4(0.0, 1.0, 0.0, 0.0),
+             vec4(0.0, 0.0, 1.0, 0.0),
+             vec4(x, y, z, 1.0)
+           );
+}
+
 void main() {
       gl_Position = projection(radians(45.0), 4.0/3.0, -0.1, -1000.0)
-                    * rotate_x(radians(45.0))
+                    * rotate_x(radians(-12.5))
+                    * translate(-0.0, -0.0, -2)
                     * vec4(position, 1.0f);
       frag_color = vec3(1.0, 1.0, 1.0); // white
 }
